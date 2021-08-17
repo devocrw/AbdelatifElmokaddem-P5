@@ -63,12 +63,20 @@ p {
   margin-left: auto !important;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.5);
+}
 .navbar-nav {
   display: flex;
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+}
+
+ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .justify-content-md-center {
