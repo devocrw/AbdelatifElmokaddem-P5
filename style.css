@@ -134,6 +134,16 @@ a {
   flex-direction: row;
 }
 
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.1rem 1rem;
+}
+
 .img_home_parallax {
   background-image: url("img/choose-lens.jpg");
   background-position: 50% 20%;
