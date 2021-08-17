@@ -48,6 +48,9 @@ p {
   margin-bottom: 1rem;
 }
 
+.bg-light {
+  background-color: #aba49e !important;
+}
 .container, .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
   width: 99.8%;
   padding-right: 15px;
