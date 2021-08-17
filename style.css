@@ -50,6 +50,11 @@ p {
   flex-direction: row;
 }
 
+.navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+}
+
 .ml-auto, .mx-auto {
   margin-left: auto !important;
 }
@@ -196,6 +201,8 @@ a {
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
+
+
 
 @media (min-width: 992px) {
   .navbar-expand-lg {
