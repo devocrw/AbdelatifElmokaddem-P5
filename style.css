@@ -94,3 +94,9 @@ ol, ul, dl {
   display: block;
   padding: 0.5rem 1rem;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
+}
