@@ -144,6 +144,12 @@ a {
   padding: 0.1rem 1rem;
 }
 
+
+.navbar-expand-lg {
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
 .img_home_parallax {
   background-image: url("img/choose-lens.jpg");
   background-position: 50% 20%;
