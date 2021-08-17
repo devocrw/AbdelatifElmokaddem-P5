@@ -273,6 +273,15 @@ a {
   padding: 1.25rem;
 }
 
+.rounded-0 {
+  border-radius: 5px !important;
+}
+
+.card-img, .card-img-top, .card-img-bottom {
+  flex-shrink: 0;
+  width: 100%;
+}
+
 @media (min-width: 992px) {
   .navbar-expand-lg {
     flex-flow: row nowrap;
