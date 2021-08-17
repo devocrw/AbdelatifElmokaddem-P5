@@ -300,6 +300,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0;
 }
 
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
 @media (min-width: 992px) {
   .navbar-expand-lg {
     flex-flow: row nowrap;
