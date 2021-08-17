@@ -104,3 +104,8 @@ a {
 .nav {
   list-style: none;
 }
+
+.navbar-expand-lg .navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+}
