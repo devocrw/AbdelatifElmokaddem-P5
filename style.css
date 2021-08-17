@@ -73,6 +73,18 @@ p {
   margin-bottom: 0;
   list-style: none;
 }
+
+
+.justify-content-md-center {
+  justify-content: center !important;
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
 ol, ul, dl {
   margin-top: 0;
   margin-bottom: 1rem;
