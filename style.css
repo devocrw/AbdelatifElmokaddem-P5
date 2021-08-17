@@ -238,6 +238,10 @@ a {
   border-color: #343a40;
 }
 
+.mb-5, .my-5 {
+  margin-bottom: 3rem !important;
+}
+
 @media (min-width: 992px) {
   .navbar-expand-lg {
     flex-flow: row nowrap;
