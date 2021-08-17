@@ -111,9 +111,6 @@ a {
   flex-direction: row;
 }
 
-*, ::before, ::after {
-  box-sizing: border-box;
-}
 
 .img_home_parallax {
   background-image: url("img/choose-lens.jpg");
@@ -131,4 +128,26 @@ a {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+.col-lg-4 {
+  flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
 }
