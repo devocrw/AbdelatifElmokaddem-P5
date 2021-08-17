@@ -48,5 +48,30 @@ p {
   margin-bottom: 1rem;
 }
 
+.container, .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
+  width: 99.8%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 10px;
+}
 
+.navbar-expand-lg .navbar-nav {
+  flex-direction: row;
+}
+.ml-auto, .mx-auto {
+  margin-left: auto !important;
+}
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
 
