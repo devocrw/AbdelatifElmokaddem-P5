@@ -20,3 +20,7 @@ let selectOption;
 const btnEnvoiPanier = document.getElementById("btn_envoyer");
 let spanConfirmationOption = document.getElementById("ma_selection");
 let inputQuantite = document.getElementById("quantite");
+
+// connexion avec Fetch et ajout infos du produit dans le HTML
+const recupDonneesArticle = async () => {
+    await fetch(`http://localhost:3000/api/cameras/${leId}`)
