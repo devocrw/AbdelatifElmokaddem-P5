@@ -24,3 +24,18 @@ let inputQuantite = document.getElementById("quantite");
 // connexion avec Fetch et ajout infos du produit dans le HTML
 const recupDonneesArticle = async () => {
     await fetch(`http://localhost:3000/api/cameras/${leId}`)
+
+        .then((response) => {
+            const idData = response.json();
+            idData.then((arrayId) => {
+                imgProduit.src = arrayId.imageUrl;
+                idArticle.innerHTML = "Référence : " + leId;
+                nameArticle.innerHTML = arrayId.name;
+                descriptionArticle.innerHTML = arrayId.description;
+                let prixEuro = arrayId.price;
+                let prixCentimes = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(prixEuro / 100);
+                priceArticle.innerHTML = prixCentimes;
+            }
+
+        }
+
