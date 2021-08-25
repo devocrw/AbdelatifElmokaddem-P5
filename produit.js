@@ -35,12 +35,22 @@ const recupDonneesArticle = async () => {
                 let prixEuro = arrayId.price;
                 let prixCentimes = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(prixEuro / 100);
                 priceArticle.innerHTML = prixCentimes;
-            }
 
-        
 
- //////// ENVOI ARTICLE DANS LE LOCALSTORAGE
 
-      // Ecouter btn " Ajouter au panier "
-      btnEnvoiPanier.addEventListener("click", (e) => {
-        e.preventDefault();
+                //////// ENVOI ARTICLE DANS LE LOCALSTORAGE
+
+                // Ecouter btn " Ajouter au panier "
+                btnEnvoiPanier.addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    // Choix article à mettre dans mon panier
+                    let ajoutProduitPanier = {
+                        imageUrl: arrayId.imageUrl,
+                        id: leId,
+                        nomArticle: arrayId.name,
+                        ChoixOption: selectOption,
+                        prix: arrayId.price,
+                        quantite: inputQuantite.value
+                    };
+                
