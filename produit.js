@@ -37,5 +37,10 @@ const recupDonneesArticle = async () => {
                 priceArticle.innerHTML = prixCentimes;
             }
 
-        }
+        
 
+ //////// ENVOI ARTICLE DANS LE LOCALSTORAGE
+
+      // Ecouter btn " Ajouter au panier "
+      btnEnvoiPanier.addEventListener("click", (e) => {
+        e.preventDefault();
