@@ -1,4 +1,4 @@
-//////// AJOUT DES ARTICLES SUR LA PAGE D'ACCUEIL
+//////// INJECTE LES ARTICLES DANS LA PAGE D'ACCUEIL
 
 let mesProduits = document.getElementById("mesproduits");
 
