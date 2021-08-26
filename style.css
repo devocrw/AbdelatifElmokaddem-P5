@@ -41,6 +41,8 @@ p {
 
 .bg-light {
   background-color: #aba49e !important;
+  border-radius: 5px;
+  margin: 2px;
 }
 
 .container, .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
