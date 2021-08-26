@@ -2,10 +2,10 @@
 
 let mesProduits = document.getElementById("mesproduits");
 
-const ajoutArticles = async() => {
+const ajoutArticles = async () => {
   let tousLesArticles = await Promise.all([getCamera()]);
-  
-  tousLesArticles.forEach((articles) =>  {
+
+  tousLesArticles.forEach((articles) => {
     articles.forEach((article) => {
       let colonneArticle = document.createElement("div");
       colonneArticle.className = "col-lg-4 d-flex align-items-stretch";
@@ -33,7 +33,7 @@ const ajoutArticles = async() => {
       let titrePriceH4 = document.createElement("h4");
       titrePriceH4.className = "card-title h5 text-center text-secondary";
       let prixEuro = article.price;
-      let prixCentimes = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(prixEuro/100);
+      let prixCentimes = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(prixEuro / 100);
       titrePriceH4.innerHTML = prixCentimes;
       cardBody.appendChild(titrePriceH4);
 
@@ -55,5 +55,5 @@ const ajoutArticles = async() => {
     });
   });
 };
-  // Lancer la fonction
-  ajoutArticles();
+// Lancer la fonction
+ajoutArticles();
