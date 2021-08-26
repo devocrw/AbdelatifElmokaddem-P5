@@ -79,4 +79,22 @@ const recupDonneesArticle = async () => {
                                     produitIndex = i;
                                 }
                             };
+                            // Si le produit existe dans le panier = ajouter la quantité
+                            if (produitIndex !== false) {
+                                enregistementDansLocalStorage[produitIndex].quantite = Number(enregistementDansLocalStorage[produitIndex].quantite) + Number(ajoutProduitPanier.quantite);
+                            } else {
+                                enregistementDansLocalStorage.push(ajoutProduitPanier);
+                            };
+                            localStorage.setItem("Articles", JSON.stringify(enregistementDansLocalStorage));
+                        };
+                        calculNombreArticle();
+                        confirmationPanier();
+                    };
+                    ajoutProduitLocalStorage();
 
+                });
+            });
+        })
+        .catch((error) => console.log(error));
+};
+recupDonneesArticle();
