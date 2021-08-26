@@ -35,9 +35,8 @@ const recupDonneesArticle = async () => {
                 let prixEuro = arrayId.price;
                 let prixCentimes = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(prixEuro / 100);
                 priceArticle.innerHTML = prixCentimes;
-
-
-
+            
+        
                 //////// ENVOI ARTICLE DANS LE LOCALSTORAGE
 
                 // Ecouter btn " Ajouter au panier "
@@ -53,4 +52,10 @@ const recupDonneesArticle = async () => {
                         prix: arrayId.price,
                         quantite: inputQuantite.value
                     };
-                
+                    // Cocher une option avant envoi dans le localStorage
+                    const confirmationPanier = () => {
+                        if (selectOption) {
+                            confirmation_check.className = "text-success text-center mb-2";
+                            spanConfirmationOption.innerHTML = "Votre article a été ajouté au panier";
+                        };
+                    }
