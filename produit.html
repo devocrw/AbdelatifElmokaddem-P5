@@ -1,108 +1,117 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <!-- Meta tags -->
-    <meta charset="utf-8">
-    <meta name="description" content="Mon produit Orinoco">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  
-    <!-- Fichier style -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+<head>
+  <!-- Meta tags -->
+  <meta charset="utf-8">
+  <meta name="description" content="Mon produit Orinoco">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Mon produit Orinoco</title>
-  </head>
 
-  <body>
-    <!-- HEADER -->
-    <header class="container-fluid bg-light">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">
-          <img src="img/logo.jpg" id="logo_accueil" alt="Site logo"></a>
+  <!-- Fichier style -->
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div id="navbarContent" class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Accueil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="panier.html"><i class="fas fa-shopping-cart"></i>
-                  Panier
-                  <span id="nombre_article_ajout"></span>
-                </a>
-              </li>
-            </ul>
-        </div>
-      </nav>
-    </header>
+  <title>Mon produit Orinoco</title>
+</head>
 
-   <!-- PRODUITS -->
-    <div class="p-4 p-md-5 mb-4 text-white rounded bg-light">
-      <h1 class="text-center mt-5 mb-5 display-4 text-dark">Découvrez la dernière tendance vintage</h1>
-    </div>
-    <main class="container my-5">
-      <div class="card rounded-0 flex-md-row mb-3">
-        <figure class="col-md-8">
-          <img class="mt-3 img-fluid" id="imgproduit"></img>
-        </figure>
-        <figcaption class="col-md-4 card-body d-flex flex-column" id="monproduit">
-          <div class="text-info small mb-2" id="id_article"></div>
-          <h3 class="h2 mt-lg-5" id="name_article"></h3>
-          <div class="mb-auto text-justify" id="description_article"></div>
-          <div class="mt-3" id="choix_quantite">
-            <span>Quantité :</span>
-            <input id="quantite" type="number" placeholder="0" min="0" max="10">
-          </div>
-          <p class="mt-5">Choisir une lentille :</p>
-          <select class="form-control form-control-sm" id="choix_lentilles">
-            <option id="to_hide">Choisir une option</option>
-          </select>
-          <h4 class="text-secondary mt-5 text-center" id="price_article"></h4>
-          <div class="text-center mb-2" id="confirmation_check">
-            <span id="ma_selection"></span>
-          </div>
-          <button type="submit" disabled href="#" class="btn btn-dark rounded-0" id="btn_envoyer">Ajouter au panier</button>
-        </figcaption>
-      </div>
-    </main>
+<body>
+  <!-- HEADER -->
+  <header class="container-fluid bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.jpg" id="logo_accueil" alt="Site logo"></a>
 
-    <!-- FOOTER -->
-    <footer class="container-fluid bg-light py-4">
-      <ul class="nav justify-content-md-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Politique de confidentialité</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Mentions légales</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Nous contacter</a>
-        </li>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navbarContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-          <a class="nav-link" href="#">©Orinoco - 2021</a>
-        </li>
-      </ul>
-    </footer>
+            <a class="nav-link" href="index.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="panier.html"><i class="fas fa-shopping-cart"></i>
+              Panier
+              <span id="nombre_article_ajout"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PRODUITS -->
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-light">
+    <h1 class="text-center mt-5 mb-5 display-4 text-dark">Découvrez la dernière tendance vintage</h1>
+  </div>
+  <main class="container my-5">
+    <div class="card rounded-0 flex-md-row mb-3">
+      <figure class="col-md-8">
+        <img class="mt-3 img-fluid" id="imgproduit"></img>
+      </figure>
+      <figcaption class="col-md-4 card-body d-flex flex-column" id="monproduit">
+        <div class="text-info small mb-2" id="id_article"></div>
+        <h3 class="h2 mt-lg-5" id="name_article"></h3>
+        <div class="mb-auto text-justify" id="description_article"></div>
+        <div class="mt-3" id="choix_quantite">
+          <span>Quantité :</span>
+          <input id="quantite" type="number" placeholder="0" min="0" max="10">
+        </div>
+        <p class="mt-5"></p>
+        <select class="form-control form-control-sm" id="choix_lentilles">
+          <option id="to_hide">Choisir une option</option>
+        </select>
+        <h4 class="text-secondary mt-5 text-center" id="price_article"></h4>
+        <div class="text-center mb-2" id="confirmation_check">
+          <span id="ma_selection"></span>
+        </div>
+        <button type="submit" disabled href="#" class="btn btn-dark rounded-0" id="btn_envoyer">Ajouter au
+          panier</button>
+      </figcaption>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="container-fluid bg-light py-4">
+    <ul class="nav justify-content-md-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Politique de confidentialité</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Mentions légales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Nous contacter</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">©Orinoco - 2021</a>
+      </li>
+    </ul>
+  </footer>
 
   <!-- Optional JavaScript -->
   <script src="api.js"></script>
   <script src="produit.js"></script>
-  
- 
+
+
 
   <!-- jQuery, Popper.js, Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  
-    
-   <!-- Font Awesome -->
-   <script src="https://kit.fontawesome.com/ef082479a6.js" crossorigin="anonymous"></script> 
-  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/ef082479a6.js" crossorigin="anonymous"></script>
+</body>
+
 </html>
