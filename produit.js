@@ -6,7 +6,7 @@ const recuperationId = window.location.search;
 
 let leId = recuperationId.slice(4);
 
-//////// AFFICHAGE PRODUIT DANS LA PAGE
+//////// AFFICHAGE DE PRODUITS DANS LA PAGE
 
 // Tagge les div dans le HTML
 let monProduit = document.getElementById("monproduit");
@@ -40,8 +40,8 @@ const recupDonneesArticle = async () => {
                 //////// ENVOI ARTICLE DANS LE LOCALSTORAGE
 
                 // Ecouter btn " Ajouter au panier "
-                btnEnvoiPanier.addEventListener("click", (e) => {
-                    e.preventDefault();
+                btnEnvoiPanier.addEventListener("click", (event) => {
+                    event.preventDefault();
 
                     // Choix article à mettre dans mon panier
                     let ajoutProduitPanier = {
@@ -69,5 +69,6 @@ const recupDonneesArticle = async () => {
                             localStorage.setItem("Articles", JSON.stringify(enregistementDansLocalStorage));
                             calculNombreArticle();
                             confirmationPanier();
+                            console.log(ajoutProduitLocalStorage);
                         }
                     }
