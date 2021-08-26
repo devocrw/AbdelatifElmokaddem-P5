@@ -69,6 +69,14 @@ const recupDonneesArticle = async () => {
                             localStorage.setItem("Articles", JSON.stringify(enregistementDansLocalStorage));
                             calculNombreArticle();
                             confirmationPanier();
-                            console.log(ajoutProduitLocalStorage);
-                        }
-                    }
+
+                        } else {
+                            //si produit existant  = ajouter quantité | boucler dans le panier avec for
+                            let produitIndex = false;
+                            for (let i = 0; i < enregistementDansLocalStorage.length; i++) {
+                                //La condition du produit existant
+                                if (enregistementDansLocalStorage[i].id === ajoutProduitPanier.id && enregistementDansLocalStorage[i].ChoixOption === ajoutProduitPanier.ChoixOption) {
+                                    produitIndex = i;
+                                }
+                            };
+
