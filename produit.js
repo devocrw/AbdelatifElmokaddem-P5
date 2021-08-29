@@ -36,6 +36,25 @@ const recupDonneesArticle = async () => {
                 let prixCentimes = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(prixEuro / 100);
                 priceArticle.innerHTML = prixCentimes;
 
+                // Permet d'afficher les différentes options lentilles dans <select>
+                for (let lentille in arrayId.lenses) {
+                    let uneOption = document.createElement("option");
+                    uneOption.innerHTML = arrayId.lenses[lentille];
+                    choixLentilles.appendChild(uneOption);
+                };
+
+                // Choix d'une option de lentille 
+                choixLentilles.addEventListener("change", () => {
+                    selectOption = choixLentilles.options[choixLentilles.selectedIndex].text;
+                    btnEnvoiPanier.removeAttribute("disabled");
+                });
+
+                // Supprimer " Faites votre choix par défaut " à la sélection
+                const hideDefaultOption = () => {
+                    document.getElementById("to_hide").style.display = "none";
+                };
+                hideDefaultOption();
+
 
                 //////// ENVOI ARTICLE DANS LE LOCALSTORAGE
 
@@ -52,6 +71,8 @@ const recupDonneesArticle = async () => {
                         prix: arrayId.price,
                         quantite: inputQuantite.value
                     };
+
+
                     // Cocher une option avant envoi dans le localStorage
                     const confirmationPanier = () => {
                         if (selectOption) {
@@ -63,6 +84,7 @@ const recupDonneesArticle = async () => {
                     //////// AJOUT DE PRODUITS AU PANIER
                     const ajoutProduitLocalStorage = () => {
                         //si panier vide = ajouter un nouveau produit
+
                         if (enregistementDansLocalStorage === null) {
                             enregistementDansLocalStorage = [];
                             enregistementDansLocalStorage.push(ajoutProduitPanier);
