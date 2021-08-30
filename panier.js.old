@@ -1,0 +1,12 @@
+function afficher (){
+    const panier = document.getElementById("monpanier")
+    let  tab = [] 
+let tabtmp = localStorage.getItem("cameras")
+if (tabtmp){tab = JSON.parse(tabtmp)}
+for (let i=0;i< tab.length;i++)
+{
+    panier.innerHTML+=tab[i].nomArticle
+}
+}
+
+afficher();
