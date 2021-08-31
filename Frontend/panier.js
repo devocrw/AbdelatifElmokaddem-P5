@@ -69,3 +69,11 @@ const totalPrixCalcule = () => {
         for (let i = 0; i < enregistementDansLocalStorage.length; i++) {
             totalArticles.push(enregistementDansLocalStorage[i].prix * enregistementDansLocalStorage[i].quantite);
         };
+
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        let totalAfficher = totalArticles.reduce(reducer);
+        let prixCentimes = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(totalAfficher/100);
+        totalPrix.innerHTML = "Total : " + prixCentimes;
+    };
+};
+totalPrixCalcule();
