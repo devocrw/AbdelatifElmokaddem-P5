@@ -1,6 +1,6 @@
 let enregistementDansLocalStorage = JSON.parse(localStorage.getItem("Articles"));
 
-// AFFICHER LES PRODUITS DU PANIER DANS LA PAGE
+// AFFICHER LE CONTENU DU PANIER DANS LA PAGE
 
 let articlePanier = document.getElementById("article_panier");
 let totalPrix = document.getElementById("total_prix");
@@ -57,3 +57,15 @@ const afficherProduitPanier = () => {
         };
     };
 };
+
+afficherProduitPanier();
+
+//  AFFICHER LA SOMME DES PRODUITS EN EUROS  
+const totalPrixCalcule = () => {
+    if (enregistementDansLocalStorage === null) {
+        totalPrix.innerHTML = "Total : " + 0 + " € ";
+    } else {
+        let totalArticles = [];
+        for (let i = 0; i < enregistementDansLocalStorage.length; i++) {
+            totalArticles.push(enregistementDansLocalStorage[i].prix * enregistementDansLocalStorage[i].quantite);
+        };
