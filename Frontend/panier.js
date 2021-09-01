@@ -72,8 +72,108 @@ const totalPrixCalcule = () => {
 
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         let totalAfficher = totalArticles.reduce(reducer);
-        let prixCentimes = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(totalAfficher/100);
+        let prixCentimes = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(totalAfficher / 100);
         totalPrix.innerHTML = "Total : " + prixCentimes;
     };
 };
 totalPrixCalcule();
+
+// FORMULAIRE
+let EnregistrementPrixTotal = totalPrix.textContent;
+let form = document.getElementById("form");
+
+let firstName = document.getElementById("firstName");
+let lastName = document.getElementById("lastName");
+let address = document.getElementById("address");
+let city = document.getElementById("city");
+let email = document.getElementById("email");
+
+let indication = document.getElementById("indication");
+indication.className = "text-center mt-2";
+let btnEnvoiForm = document.getElementById("btn_envoi_form");
+
+// REGEX vérifications
+let RegexLettre = /^[a-zA-ZÀ-ÿ-\s]+$/;
+let RegexLettreNombre = /^[a-zA-ZÀ-ÿ-0-9-\s]+$/;
+let RegexLettreNombreVirgule = /^[a-zA-ZÀ-ÿ-0-9-\s,']+$/;
+
+// Conditions de validation des champs du formulaire 
+form.addEventListener("submit", (event) => {
+    if (RegexLettre.test(firstName.value) == false) {
+        event.preventDefault();
+        indication.textContent = "Le champs est vide ou n'accepte pas les caractères spéciaux, veuillez ressaisir à nouveau vos informations.";
+        indication.style.display = "block";
+
+    } else if (RegexLettre.test(lastName.value) == false) {
+        event.preventDefault();
+        indication.textContent = "Le champs est vide ou n'accepte pas les caractères spéciaux, veuillez ressaisir à nouveau vos informations.";
+        indication.style.display = "block";
+
+    } else if (RegexLettreNombre.test(city.value) == false) {
+        event.preventDefault();
+        indication.textContent = "Le champs est vide ou n'accepte pas les caractères spéciaux, veuillez ressaisir à nouveau vos informations.";
+        indication.style.display = "block";
+
+    } else if (RegexLettreNombreVirgule.test(address.value) == false) {
+        event.preventDefault();
+        indication.textContent = "Le champs est vide ou n'accepte pas les caractères spéciaux, veuillez ressaisir à nouveau vos informations.";
+        indication.style.display = "block";
+
+    } else if (email.value == "") {
+        event.preventDefault();
+        indication.textContent = "Le champs est vide, veuillez saisir votre adresss mail.";
+        indication.style.display = "block";
+
+        // Validation du panier
+    } else if (enregistementDansLocalStorage < 1 || enregistementDansLocalStorage == null) {
+        event.preventDefault();
+        alert("Votre panier est vide");
+        return false;
+    } else {
+        event.preventDefault();
+        // ENREGISTREMENT DU FORMULAIRE DANS L'API
+        // Récupération id produits sous forme de tableau
+        let products = [];
+        for (let i = 0; i < enregistementDansLocalStorage.length; i++) {
+            products.push(enregistementDansLocalStorage[i].id);
+        };
+
+        //Objet contact
+        let contact = {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            address: address.value,
+            city: city.value,
+            email: email.value,
+        };
+
+        // Les infos à envoyer dans l'API
+        let envoiInfos = JSON.stringify({
+            contact,
+            products,
+        });
+
+        // ENVOI DANS L'API CAMERAS/ORDER
+        const envoiApi = () => {
+            const options = {
+                method: "POST",
+                body: envoiInfos,
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            };
+
+            fetch("http://localhost:3000/api/cameras/order", options)
+                .then(response => response.json())
+                .then(response => {
+                    localStorage.setItem("Order Id", JSON.stringify(response.orderId));
+                    localStorage.setItem("Contact", JSON.stringify(response.contact));
+                    localStorage.setItem("Prix Total", JSON.stringify(EnregistrementPrixTotal));
+                    localStorage.removeItem("Articles");
+
+                })
+                .catch((error) => console.log(error));
+        };
+        envoiApi();
+    };
+});
