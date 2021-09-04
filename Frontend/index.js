@@ -1,9 +1,9 @@
-//////// INJECTE LES ARTICLES DANS LA PAGE D'ACCUEIL
+//////// AFFICHER LA LISTE DES CAMERAS LA PAGE D'ACCUEIL (*plan test)
 
 let mesProduits = document.getElementById("mesproduits");
 
 const ajoutArticles = async () => {
-  let tousLesArticles = await Promise.all([getCamera()]);
+  let tousLesArticles = await Promise.all([getCameras()]);
 
   tousLesArticles.forEach((articles) => {
     articles.forEach((article) => {
@@ -33,7 +33,10 @@ const ajoutArticles = async () => {
       let titrePriceH4 = document.createElement("h4");
       titrePriceH4.className = "card-title h5 text-center text-secondary";
       let prixEuro = article.price;
-      let prixCentimes = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(prixEuro / 100);
+      let prixCentimes = new Intl.NumberFormat("fr-FR", {
+        style: "currency",
+        currency: "EUR",
+      }).format(prixEuro / 100);
       titrePriceH4.innerHTML = prixCentimes;
       cardBody.appendChild(titrePriceH4);
 
@@ -49,9 +52,8 @@ const ajoutArticles = async () => {
 
       //////// CLIQUER SUR LE PRODUIT ET AFFICHAGE DU PRODUIT SUR " PAGE PRODUIT "
       articleBtn.addEventListener("click", () => {
-        let pageProduit = location.href = `produit.html?id=${article._id}`;
+        let pageProduit = (location.href = `produit.html?id=${article._id}`);
       });
-
     });
   });
 };
