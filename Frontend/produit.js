@@ -38,7 +38,7 @@ const recupDonneesArticle = async () => {
         }).format(prixEuro / 100);
         priceArticle.innerHTML = prixCentimes;
 
-        // Permet d'afficher les différentes options lentilles dans la <selection> (*plan test)
+        // Permet d'afficher les différentes options lentilles dans le menu deroulant (*plan test)
         for (let lentille in arrayId.lenses) {
           let uneOption = document.createElement("option");
           uneOption.innerHTML = arrayId.lenses[lentille];
